@@ -19,7 +19,7 @@ body {
      }
      .abouti  {
         background-color: lightgrey;
-        width: 750px;
+        width: 600px;
         border: 15px solid green;
         padding: 30px;
         margin: auto;
@@ -71,6 +71,7 @@ ol li{
 .media-links a:link {
     color: rgb(144, 188, 241);
   }
+ 
                   
   .one,
   .two {
@@ -146,7 +147,7 @@ padding-top: 0px;
 
 .card a {
     text-decoration: none;
-    color: aquamarine;
+    color: rgb(99, 184, 156);
 }
 .slide-text,
 .footer-text {
@@ -159,6 +160,16 @@ footer,
     background: linear-gradient(270deg, #00009c 0%, #000000 100%);
 
 }
+col-lg-1 col-md-12 footer-text p {
+color:aquamarine ;
+}
+
+.footer-text {
+    color: aquamarine;
+    margin: auto auto;
+    text-align: left;
+  }
+  
 .media-links {
     display: flex;
     justify-content: center;
