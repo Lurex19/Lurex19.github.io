@@ -11,7 +11,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="source/files/favicon/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="source/files/favicon/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
-  <title>Тегілім українською</title>
+  <title>Тора </title>
   <script>
     var variable = 10;
     function getVariable() {
@@ -91,6 +91,21 @@
       xhttp.send();
       return;
     }
+
+
+    function loadcaret(artu) {
+      var toggler = document.getElementsByClassName("caret");
+      var i;
+
+      for (i = 0; i < toggler.length; i++) {
+        toggler[i].addEventListener("click", function () {
+          this.parentElement.querySelector(".nested").classList.toggle("active");
+          this.classList.toggle("check-box");
+        });
+
+      }
+      return;
+    }
   </script>
 </head>
 
@@ -106,27 +121,25 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
-            <li id="day1" onclick="onmyclick(this)" class="Clicked">
-              <a class="nav-link active" aria-current="page" href="/">За День</a>
+            <li id="tora1" onclick="onmyclick(this)" class="Clicked">
+              <a class="nav-link active" aria-current="page" href="/">Берешит</a>
             </li>
-            <li id="book1" onclick="onmyclick(this)" class="nav-item">
-              <a class="nav-link" href="#">Книга перша</a>
+            <li id="tora2" onclick="onmyclick(this)" class="nav-item">
+              <a class="nav-link" href="#">Шмот</a>
             </li>
-            <li id="book2" onclick="onmyclick(this)" class="nav-item">
-              <a class="nav-link" href="#">Книга друга</a>
+            <li id="tora3" onclick="onmyclick(this)" class="nav-item">
+              <a class="nav-link" href="#">Ваикра</a>
             </li>
-            <li id="book3" onclick="onmyclick(this)" class="nav-item">
-              <a class="nav-link" href="#">Книга третя</a>
+            <li id="tora4" onclick="onmyclick(this)" class="nav-item">
+              <a class="nav-link" href="#">Бемидбар</a>
             </li>
-            <li id="book4" onclick="onmyclick(this)" class="nav-item">
-              <a class="nav-link" href="#">Книга четверта</a>
+            <li id="tora5" onclick="onmyclick(this)" class="nav-item">
+              <a class="nav-link" href="#">Дваримм</a>
             </li>
-            <li id="book55" onclick="onmyclick(this)" class="nav-item">
-              <a class="nav-link" href="#"> Книга п'ята</a>
+            <li id="ToraSS" onclick="onmyclick(this)" class="nav-item">
+              <a class="nav-link" href="#"> Содержание</a>
             </li>
-            <li id="about" onclick="onmyclick(this)" class="nav-item">
-              <a class="nav-link" href="#"> Про що</a>
-            </li>
+
             <li class="nav-item">
 
               <a class="nav-link" href="index.html">
@@ -142,25 +155,27 @@
   <section>
     <div class="container-fluid mt-4">
       <div class="row">
-        <div class="col-lg-2" id="w3-include1">
-          <div w3-include-html="source/fdays/contend3.html">
+        <div class="col-lg-2 col-md-12" id="w3-include1">
+          <div w3-include-html="source/fdays/contora1.html">
             <script>
               includeHTML();
             </script>
           </div>
         </div>
-        <div class="col-lg-8 col-md-12" id="w3-include">
-          <div w3-include-html="source/fdays/day1.html">
+        <div class="col-lg-5 col-md-12" id="w3-include">
+          <div w3-include-html="source/fdays/tora1.html">
+            <script>
+              includeHTML();
+            </script>
+          </div>
+        </div>
+         <div class="col-lg-5 col-md-12" id="w3-include2">
+          <div w3-include-html="source/fdays/tomred.html">
             <script>
               includeHTML();
             </script>
 
           </div>
-        </div>
-        <div class="col-lg-2 col-md-12" id="w3-include2">
-          <h2>Повний коментар до псалмів </h2>
-          <p><a href=" https://duh-i-litera.com/bookstore/tegilim-psalmi-komentar-rabina-shimshona-rafaelja-girsha-t-1"
-              /">Відвідайте!</a></p>
 
         </div>
       </div>
@@ -169,9 +184,9 @@
   <footer class="mt-4">
     <div class="container-fluid">
       <div class="row">
-        <div class="col-lg-1 col-md-12 footer-text text-center" >
+        <div class="col-lg-1 col-md-12 footer-text text-center">
           <p style="color: aquamarine;">Контакт наша команда </p>
-              </div>
+        </div>
         <div class="col-lg-2 col-md-12 footer-text text-center">
           <h2> Email</h2>
           <p style="color: aquamarine;">lurexgi@outlook.com</p>

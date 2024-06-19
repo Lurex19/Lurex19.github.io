@@ -6,7 +6,7 @@ body {
 
 
     p { font-family: Arial, sans-serif;
-        font-size: 12pt;
+        font-size: 10pt;
         font-style: italic;
         line-height: 110%;
                 color:rgb(15, 15, 15) ; 
@@ -26,9 +26,20 @@ body {
         text-align: center;
         align-self: center;
      }
-
+     h1 {font-family: "Arial", sans-serif; 
+        font-size: 16pt; font-style: italic; 
+        font-weight:bold;
+        margin-top: 0%; 
+       margin-bottom: 0%;text-align: center;
+     }
    h2 {font-family: "Arial", sans-serif; 
-    font-size: 16pt; font-style: italic; 
+    font-size: 14pt; font-style: italic; 
+    font-weight:bold;
+    margin-top: 0%; 
+   margin-bottom: 0%;text-align: center;
+}
+h3 {font-family: "Arial", sans-serif; 
+    font-size: 10pt; font-style: italic; 
     font-weight:bold;
     margin-top: 0%; 
    margin-bottom: 0%;text-align: center;
@@ -36,7 +47,7 @@ body {
 ul li,
 ol li{
     font-family: Arial, sans-serif;
-    font-size: 12pt;
+    font-size: 10pt;
     font-style: italic;
     line-height: 100%;
             color: #0000ff
@@ -45,6 +56,36 @@ ol li{
     padding: 0;
 
   }
+  .caret {
+    cursor: pointer;
+    -webkit-user-select: none; /* Safari 3.1+ */
+    -moz-user-select: none; /* Firefox 2+ */
+    -ms-user-select: none; /* IE 10+ */
+    user-select: none;
+  }
+  
+  .caret::before {
+    content: "\25B6";
+    color: black;
+    display: inline-block;
+    margin-right: 6px;
+  }
+  
+  .caret-down::before {
+    -ms-transform: rotate(90deg); /* IE 9 */
+    -webkit-transform: rotate(90deg); /* Safari */'
+    transform: rotate(90deg);  
+  }
+  
+  .nested {
+    display: none;
+  }
+  
+  .active {
+    display: block;
+  }
+ 
+  
 ::-webkit-scrollbar {
     width: 15px;
 }
@@ -57,10 +98,34 @@ ol li{
     border-radius: 8px;
     border: 3px solid #d4d4d4 ;
 }
+::-moz-scrollbar-thumb:hover {
+    background: #7c7c7c;
+}
+::-moz-scrollbar {
+    width: 15px;
+}
+::-moz-scrollbar-track {
+    background: #d4d4d4;
+    box-shadow: 0 0 2px rgba(0,0,0,.2)inset;
+}
+::-moz-scrollbar-thumb {
+    background: #000000;
+    border-radius: 8px;
+    border: 3px solid #d4d4d4 ;
+}
 ::-webkit-scrollbar-thumb:hover {
     background: #7c7c7c;
 }
- .col-lg-8.col-md-12       {
+.col-lg-5.col-md-12       {
+    height: 1200px;
+    overflow-y: auto;
+ }
+
+.col-lg-5.col-md-12::-webkit-scrollbar {
+    width: 15px;
+}
+
+.col-lg-8.col-md-12       {
     height: 1200px;
     overflow-y: auto;
  }
@@ -71,7 +136,10 @@ ol li{
 .media-links a:link {
     color: rgb(144, 188, 241);
   }
- 
+  ul, #myUL {
+    list-style-type: none;
+  }
+  
                   
   .one,
   .two {
