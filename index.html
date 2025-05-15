@@ -47,7 +47,7 @@
     }
     
     function torclick(obj,fr1) {
-      let Lst = obj
+      let Lst = obj;
       if (Lst) {
         Lst.className = '';
         obj.className = 'Clicked';
@@ -60,7 +60,7 @@
       }
     }
     function ontgclick(obj,fr2) {
-      let Lst = obj
+      let Lst = obj;
       if (Lst) {
         Lst.className = '';
         obj.className = 'Clicked';
@@ -73,7 +73,7 @@
       }
     }
     function onprclick(obj) {
-      let Lst = obj
+      let Lst = obj;
       if (Lst) {
         Lst.className = '';
         obj.className = 'Clicked';
@@ -86,7 +86,7 @@
     }
 
     function onmyclick(obj) {
-      let Lst = obj
+      let Lst = obj;
       if (Lst) {
         Lst.className = '';
         obj.className = 'Clicked';
@@ -100,7 +100,7 @@
     }
    
     function loadin(artu) {
-      let z = artu
+      let z = artu;
       if (z == "tegilimua") {
         z = "tegilim";
       }
@@ -157,10 +157,10 @@
       return;
     }
     function loadDoc3(artu,fr3) {
-      let z = artu
-      let y = fr3
-      let ar3 = 'source/fdays/' + y + ".html"
-      let ar5 = "div." + z
+      let z = artu;
+      let y = fr3;
+      let ar3 = 'source/fdays/' + y + ".html";
+      let ar5 = "div." + z;
       //   console.log(ar5)
       const xhttp = new XMLHttpRequest();
       xhttp.onload = function () {
@@ -175,17 +175,17 @@
     }
    
     function loadpunkt(artu) {
-      let z = artu
+      let z = artu;
       const punkt = {
         firstName: artu
       }
       return;
     }
     function loadDoc5(artu,tr) {
-      let kn = artu
-      let y = tr
-      let ar3 = 'source/fdays/' + y + '.html'
-      let ar5 = "div." + kn
+      let kn = artu;
+      let y = tr;
+      let ar3 = 'source/fdays/' + y + '.html';
+      let ar5 = "div." + kn;
     // console.log(ar5)
       const xhttp = new XMLHttpRequest();
       xhttp.onload = function () {
@@ -202,13 +202,13 @@
       return;
     }
     function conclick(obj) {
-      let Lst = obj
+      let Lst = obj;
       if (Lst) {
         Ls.className = '';
         obj.className = 'Clicked';
         let z = obj.id;
         Lst = obj;
-        loadDoc(z)
+        loadDoc(z);
         return;
       }
     }
