@@ -45,20 +45,7 @@
         }
       }
     }
-    function onmyclick(obj,) {
-      let Lst = obj
-      if (Lst) {
-        Lst.className = '';
-        obj.className = 'Clicked';
-        let z = obj.id;
-        Lst = obj;
-        loadin(z);
-        loadDoc1(z);
-        loadDoc(z);
-        return;
-      }
-    }
-   
+    
     function torclick(obj,fr1) {
       let Lst = obj
       if (Lst) {
@@ -97,6 +84,21 @@
         return;
       }
     }
+
+    function onmyclick(obj) {
+      let Lst = obj
+      if (Lst) {
+        Lst.className = '';
+        obj.className = 'Clicked';
+        let z = obj.id;
+        Lst = obj;
+        loadin(z);
+        loadDoc1(z);
+        loadDoc(z);
+        return;
+      }
+    }
+   
     function loadin(artu) {
       let z = artu
       if (z == "tegilimua") {
@@ -116,12 +118,12 @@
       return;
     }
     function loadDoc1(artu) {
-      let z = artu
+      let z = artu;
       if (z == "aboutua") {
         z = "about";
       }
-      let k = getVarhtml(z)
-      ar4 = "source/fdays/con" + k + ".html"
+      let k = getVarhtml(z);
+      ar4 = "source/fdays/con" + k + ".html";
       // console.log(ar4)
       const xhttp = new XMLHttpRequest();
       xhttp.onload = function () {
@@ -132,7 +134,7 @@
       return;
     }
     function loadDoc(artu) {
-      let z = artu
+      let z = artu;
       let ar3 = 'source/fdays/' + z + ".html";
       // console.log(z)
       const xhttp = new XMLHttpRequest();
@@ -226,7 +228,7 @@
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Молитва</a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li id="aboutua" onclick="onmyclick(this)"><a class="dropdown-item" href="#"  style="line-height: 120%;">Молитва укр.</a>
+                <li id="aboutua" onclick="onmyclick(this)"><a class="dropdown-item" href="#"  style="line-height: 160%;">Молитва укр.</a>
                 </li>
                 <li id="about" onclick="onmyclick(this)"><a class="dropdown-item" href="#">Молитва</a>
                 </li>
@@ -235,13 +237,13 @@
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Тегилим</a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li id="tegilimua" onclick="onmyclick(this)"><a class="dropdown-item" href="#"  style="line-height: 120%;">Тегілім укр.</a>
+                <li id="tegilimua" onclick="onmyclick(this)"><a class="dropdown-item" href="#"  style="line-height: 160%;">Тегілім укр.</a>
                 </li>
                 <li id="tegilim" onclick="onmyclick(this)"><a class="dropdown-item" href="#">Тегилим</a>
                 </li>
               </ul>
             </li>
-            <li id="tora" onclick="onmyclick(this)" class="nav-item"><a class="nav-link" href="#"  style="line-height: 120%;">Вся Тора</a>
+            <li id="tora" onclick="onmyclick(this)" class="nav-item"><a class="nav-link" href="#"  style="line-height: 160%;"М>Вся Тора</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="index.html">
