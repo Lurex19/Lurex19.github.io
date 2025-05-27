@@ -178,11 +178,13 @@ ol li.caret {
   height: 1200px;
   overflow-y: auto;
 }
+/*027/05*/
 #w3-include2.col-lg-5.col-md-12  {
   height: 1000px;
   padding: 20px;
   overflow-y: auto;
   scroll-behavior: auto;
+  scroll-snap-stop: always;
  }
 .col-lg-8.col-md-12 {
   height: 1200px;
