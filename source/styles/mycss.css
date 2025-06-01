@@ -185,6 +185,7 @@ ol li.caret {
   overflow-y: auto;
   scroll-behavior: auto;
   scroll-snap-stop: always;
+  background-attachment: local;///29.05
  }
 .col-lg-8.col-md-12 {
   height: 1200px;
