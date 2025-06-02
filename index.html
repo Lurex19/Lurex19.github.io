@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
 
 <head>
   <meta charset="UTF-8">
@@ -12,6 +12,9 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/source/files/favicon/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
   <title>Тора </title>
+  /.*  не удалять   это символ для удаление пустыж строк  */
+  /*https://www.google.com/search?q=vscode+remove+empty+lines&newwindow=1&sca_esv=02084b41e4f98c9a&rlz=1C1GCEU_ruUA1161UA1161&biw=1488&bih=828&ei=Bi08aKe2Bvm7wPAP0d6l0Ac&oq=remove+empty+lines&gs_lp=Egxnd3Mtd2l6LXNlcnAiEnJlbW92ZSBlbXB0eSBsaW5lcyoCCAEyBhAAGAcYHjIGEAAYBxgeMgYQABgHGB4yBhAAGAcYHjIGEAAYBxgeMggQABgHGAoYHjIGEAAYBxgeMgYQABgHGB4yBhAAGAcYHjIGEAAYBxgeSP1hUIElWKYscAF4AZABAJgBtgmgAaAiqgEHNS0xLjMuMbgBAcgBAPgBAZgCAqAC7QnCAgoQABiwAx
+  jWBBhHmAMAiAYBkAYIkgcFMS43LTGgB78qsgcDNy0xuAfPCcIHAzQtMsgHMg&sclient=gws-wiz-serp*/
   <script>
     var variable = 10;
     function getVariable() {
@@ -46,7 +49,7 @@
         }
       }
     };
-    
+
     function torclick(obj, fr1) {
       let Lst = obj;
       if (Lst) {
@@ -55,8 +58,7 @@
         let z = obj.id;
         let y = fr1;
         Lst = obj;
-        //  loadDoc1(z);
-        loadDoc5(z, y);
+            loadDoc5(z, y);
         return;
       }
     };
@@ -95,7 +97,7 @@
         Lst = obj;
         loadin(z);
         loadDoc1(z);
-        loadDoc(z);
+       loadDoc(z);
         return;
       }
     };
@@ -123,7 +125,6 @@
       if (z == "aboutua") {
         z = "about";
       }
-      
       let k = getVarhtml(z);
       ar4 = "source/fdays/con" + k + ".html";
       // console.log(ar4)
@@ -133,15 +134,14 @@
       };
       xhttp.open("GET", ar4, true);
       xhttp.send();
-      return;
+           return;
     };
     function loadDoc(artu) {
       let z = artu;
       let ar3 = 'source/fdays/' + z + ".html";
-
       const xhttp = new XMLHttpRequest();
       xhttp.onload = function () {
-        document.getElementById("w3-include").innerHTML =  this.responseText;
+        document.getElementById("w3-include").innerHTML = this.responseText;
       };
       xhttp.open("GET", ar3, true);
       xhttp.send();
@@ -189,15 +189,16 @@
       let ar3 = 'source/fdays/' + y + '.html';
       let ar2 = 'source/fdays/conabout.html'
       let ar5 = "div." + kn;
-                       //* console.log(ar5)*/
+      //* console.log(ar5)*/
       const xhttp = new XMLHttpRequest();
       xhttp.onload = function () {
         document.getElementById("w3-include2").innerHTML = this.responseText;
         const x = document.querySelectorAll(ar5);
-        let text = "";
+        let text = " из ТАЙНЫ НЕБЕСНЫЕ Автор: Эммануил Сведенборг <br>";
+
         //         for (let i = 0; i < x.length; i++) {
         //          text += x.elements[i].value + "<br>"; ^$\n
-    document.getElementById("w3-include2").innerHTML = x[0].innerHTML;
+        document.getElementById("w3-include2").innerHTML =text + x[0].innerHTML;
         //    document.getElementById("w3-include2").innerHTML = text;
       }
       xhttp.open("GET", ar3, true);
@@ -222,7 +223,7 @@
   <header>
     <nav class="navbar navbar-expand-lg navbar-light bg-dark">
       <div class="container-fluid">
-        <a class="navbar-brand" href="/"><img src="/source/files/tgc.gif" alt="..." style="height: 40px;"></a>
+        <a class="navbar-brand" href="index.html"><img src="/source/files/tgc.gif" alt="..." style="height: 40px;"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
           aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -252,7 +253,7 @@
             <li id="tora" onclick="onmyclick(this)" class="nav-item"><a class="nav-link" href="#"
                 style="line-height: 120%;">Вся Тора</a>
             </li>
-            
+
           </ul>
         </div>
       </div>
@@ -260,7 +261,7 @@
   </header>
   <section>
     <div class="container-fluid mt-4" id="w3-include4">
-      <div w3-include-html="/source/fdays/inabout.html">
+      <div w3-include-html="source/fdays/inabout.html">
         <script>
           includeHTML();
         </script>
@@ -278,7 +279,7 @@
           <p style="color: aquamarine;">lurexgi@outlook.com</p>
         </div>
         <div class="col-lg-4 col-md-12 media-links">
-          <img style="width: 40px; margin-inline: 1em;" src="/source/files/tgс.gif" alt="...">
+          <img style="width: 40px; margin-inline: 1em;" src="source/files/tgс.png" alt="...">
         </div>
       </div>
     </div>
