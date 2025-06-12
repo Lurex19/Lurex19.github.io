@@ -63,6 +63,20 @@ h4 {
   margin-bottom: 0%;
   text-align: center;
 }
+div#w3-include2 h4 {
+  background-color: #f1f1f1;
+  position: fixed;
+  margin-top: 0;
+   transition: 0.4s;
+}
+div#w3-include2 p {
+  padding-top: 30px;
+       scroll-padding-top: 0px;
+      line-height: 90%;
+    font-size: 12pt;
+    scroll-padding-block-start: 0px;
+}   
+    
 ul li,
 ol li {
   font-family: Arial, sans-serif;
@@ -185,7 +199,7 @@ ol li.caret {
   overflow-y: auto;
   scroll-behavior: auto;
   scroll-snap-stop: always;
-  background-attachment: local;///29.05
+  background-attachment: local;
  }
 .col-lg-8.col-md-12 {
   height: 1200px;
