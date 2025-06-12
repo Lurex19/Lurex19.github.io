@@ -56,6 +56,7 @@
         let y = fr1;
         Lst = obj;
             loadDoc5(z, y);
+            topFunction();
         return;
       }
     };
@@ -191,15 +192,16 @@
       xhttp.onload = function () {
         document.getElementById("w3-include2").innerHTML = this.responseText;
         const x = document.querySelectorAll(ar5);
-        let text = " из ТАЙНЫ НЕБЕСНЫЕ Автор: Эммануил Сведенборг <br>";
+        let text = "<br><br><p> из ТАЙНЫ НЕБЕСНЫЕ Автор: Эммануил Сведенборг </p>";
 
         //         for (let i = 0; i < x.length; i++) {
         //          text += x.elements[i].value + "<br>"; ^$\n
-        document.getElementById("w3-include2").innerHTML =text + x[0].innerHTML;
+        document.getElementById("w3-include2").innerHTML = x[0].innerHTML + text ;
         //    document.getElementById("w3-include2").innerHTML = text;
       }
       xhttp.open("GET", ar3, true);
       xhttp.send();
+
       return;
     };
     function conclick(obj) {
@@ -213,6 +215,21 @@
         return;
       }
     };
+    
+// When the user scrolls down 50px from the top of the document, resize the header's font size
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+    document.getElementById("header").style.fontSize = "30px";
+  } else {
+    document.getElementById("header").style.fontSize = "90px";
+  }
+}
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.getElementById("w3-include2").scrollTop = 0;
+}
   </script>
 </head>
 
@@ -276,7 +293,7 @@
           <p style="color: aquamarine;">lurexgi@outlook.com</p>
         </div>
         <div class="col-lg-4 col-md-12 media-links">
-          <img style="width: 40px; margin-inline: 1em;" src="/source/files/tgс.gif" alt="...">
+          <img style="width: 40px; margin-inline: 1em;" src="source/files/tgс.png" alt="...">
         </div>
       </div>
     </div>
