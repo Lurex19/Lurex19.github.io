@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Michroma&display=swap");
+
 body {
   font-family: Michroma, serif;
   background: rgba(247, 245, 245, 0.858);
@@ -14,10 +15,12 @@ p {
   padding-top: 0px;
   text-align: left;
 }
+
 #myhtml {
   height: 500px;
   width: 100%;
 }
+
 .abouti {
   background-color: lightgrey;
   width: 1000px;
@@ -27,6 +30,7 @@ p {
   text-align: center;
   align-self: center;
 }
+
 h1 {
   font-family: "Arial", sans-serif;
   font-size: 24pt;
@@ -36,6 +40,7 @@ h1 {
   margin-bottom: 0%;
   text-align: center;
 }
+
 h2 {
   font-family: "Arial", sans-serif;
   font-size: 22pt;
@@ -45,6 +50,7 @@ h2 {
   margin-bottom: 0%;
   text-align: center;
 }
+
 h3 {
   font-family: "Arial", sans-serif;
   font-size: 20pt;
@@ -54,6 +60,7 @@ h3 {
   margin-bottom: 0%;
   text-align: center;
 }
+
 h4 {
   font-family: "Arial", sans-serif;
   font-size: 18pt;
@@ -63,13 +70,14 @@ h4 {
   margin-bottom: 0%;
   text-align: center;
 }
-div#w3-include2 h4 {
+div#w3-include-right h4 {
   background-color: #f1f1f1;
   position: fixed;
   margin-top: 0;
    transition: 0.4s;
 }
-div#w3-include2 p {
+
+div#w3-include-right p {
   padding-top: 30px;
        scroll-padding-top: 0px;
       line-height: 90%;
@@ -77,8 +85,7 @@ div#w3-include2 p {
     scroll-padding-block-start: 0px;
 }   
     
-ul li,
-ol li {
+ul li, ol li {
   font-family: Arial, sans-serif;
   font-size: 13pt;
   font-style: italic;
@@ -88,8 +95,8 @@ ol li {
   margin: 0;
   padding: 0;
 }
-ul,
-ol {
+
+ul, ol {
   font-family: Arial, sans-serif;
   font-size: 14pt;
   font-style: italic;
@@ -99,9 +106,11 @@ ol {
   margin: 0px 0px;
   padding: 0;
 }
+
 .container-fluid.mt-4 {
   width: 96%;
 }
+
 li ol.a:hover {
   background-color: rgba(120, 118, 118, 0.7);
 }
@@ -113,11 +122,12 @@ li ol.a:hover {
   -ms-user-select: none; /* IE 10+ */
   user-select: none;
 }
+
 /**copy from 26/5*/
-ul li.caret,
-ol li.caret {
+ul li.caret, ol li.caret {
     line-height: 0.7;
 }
+
 .caret::before {
   content: "\25B6";
   color: black;
@@ -130,77 +140,92 @@ ol li.caret {
   -webkit-transform: rotate(90deg); /* Safari */
   transform: rotate(90deg);
 }
+
 .nested {
   display: none;
 }
+
 .caret {
   line-height: 80%;
 }
+
 .active {
   display: block;
 }
+
 ::-webkit-scrollbar {
   width: 15px;
 }
+
 ::-webkit-scrollbar-track {
   background: #d4d4d4;
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.2) inset;
 }
+
 ::-webkit-scrollbar-thumb {
   background: #000000;
   border-radius: 8px;
   border: 3px solid #d4d4d4;
 }
+
 ::-webkit-scrollbar-thumb:hover {
   background: #7c7c7c;
 }
+
 ::-moz-scrollbar-thumb:hover {
   background: #7c7c7c;
 }
+
 ::-moz-scrollbar {
   width: 15px;
 }
+
 ::-moz-scrollbar-track {
   background: #d4d4d4;
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.2) inset;
 }
+
 ::-moz-scrollbar-thumb {
   background: #000000;
   border-radius: 8px;
   border: 3px solid #d4d4d4;
 }
 
-
 .col-lg-2.col-md-12::-webkit-scrollbar {
   width: 15px;
 }
+
 /*2605*/
 .col-lg-2.col-md-12::-webkit-scrollbar-track {
   background: #d4d4d4;
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.2) inset;
 }
+
 .col-lg-2.col-md-12::-webkit-scrollbar-thumb {
   background: #939393;
   border-radius: 8px;
   border: 3px solid #d4d4d4;
 }
+
 .col-lg-2.col-md-12::-webkit-scrollbar-thumb:hover {
   background: #100101;
-  }
+}
 
 .col-lg-5.col-md-12 {
   height: 1200px;
   overflow-y: auto;
 }
+
 /*027/05*/
-#w3-include2.col-lg-5.col-md-12  {
+#w3-include-right.col-lg-5.col-md-12  {
   height: 1200px;
   padding: 20px;
   overflow-y: auto;
   scroll-behavior: auto;
   scroll-snap-stop: always;
   background-attachment: local;
- }
+}
+
 .col-lg-8.col-md-12 {
   height: 1200px;
   overflow-y: auto;
@@ -209,18 +234,16 @@ ol li.caret {
 .col-lg-8.col-md-12::-webkit-scrollbar {
   width: 15px;
 }
+
 .media-links a:link {
   color: rgb(144, 188, 241);
 }
-ul,
-#myUL {
+
+ul, #myUL {
   list-style-type: none;
 }
-/* hover: color rgba(0, 0, 0, 0.7);
-   disabled:color rgba(0, 0, 0, 0.3);*/
 
-.one,
-.two {
+.one, .two {
   padding: x 0;
   padding: y 0.5rem;
   font-weight: normal;
@@ -240,9 +263,11 @@ ul,
   margin-bottom: 0%;
   padding-top: 0px;
 }
+
 .one:hover {
   color: rgba(0, 0, 0, 0.7);
 }
+
 .two:hover {
   color: rgba(0, 0, 0, 0.7);
 }
@@ -265,20 +290,24 @@ ul,
 .nav-link {
   color: rgb(58, 151, 120);
 }
+
 .navbar-nav .nav-link.active {
   color: rgb(246, 238, 238);
 }
+
 .navbar-brand {
   width: 40px;
 }
+
 .navbar-toggler {
   background-color: rgb(143, 142, 142);
 }
-/*box-shadow: 5px 5px 10px 1px #000000;*/
+
 .sidebar {
   background: linear-gradient(270deg #00009c 0%, #000000 100%);
   color: rgb(58, 151, 120);
 }
+
 .card {
   background: linear-gradient(90deg, #00009c 0%, #000000 100%);
   color: rgb(58, 151, 120);
@@ -288,16 +317,16 @@ ul,
   text-decoration: none;
   color: rgb(99, 184, 156);
 }
-.slide-text,
-.footer-text {
+
+.slide-text, .footer-text {
   color: aquamarine;
   margin: auto auto;
 }
 
-footer,
-.btn-outline-primary {
+footer, .btn-outline-primary {
   background: linear-gradient(270deg, #00009c 0%, #000000 100%);
 }
+
 col-lg-1 col-md-12 footer-text p {
   color: aquamarine;
 }
