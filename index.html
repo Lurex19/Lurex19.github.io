@@ -99,8 +99,10 @@
         // Now load only a portion of that loaded document into the given element, effectively loading only a selected portion of the whole document
         const selectedElements = document.querySelectorAll("div." + selector);
         if (selectedElements.length >= 1) {
-          const addedText = "<br><br><p>из ТАЙНЫ НЕБЕСНЫЕ Автор: Эммануил Сведенборг</p>";
-          document.getElementById("w3-include-right").innerHTML = selectedElements[0].innerHTML + addedText;
+         // const addedText = "<br><br><p>из ТАЙНЫ НЕБЕСНЫЕ Автор: Эммануил Сведенборг</p>";
+          const addedText1 = "<h3>из ТАЙНЫ НЕБЕСНЫЕ Автор: Эммануил Сведенборг</h3><br>";
+
+          document.getElementById("w3-include-right").innerHTML = addedText1 + selectedElements[0].innerHTML ;
           
           document.body.scrollTop = 0;
 		      document.getElementById("w3-include-right").scrollTop = 0;
