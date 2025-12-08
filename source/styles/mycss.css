@@ -70,16 +70,29 @@ h4 {
   margin-bottom: 0%;
   text-align: center;
 }
+
+div#w3-include-right h5 {
+  font-family: "Arial", sans-serif;
+  font-size: 16pt;
+  font-style: italic;
+  font-weight: bold;
+  margin-top: 0%;
+  margin-bottom: 0%;
+  text-align: left;
+}
+
 div#w3-include-right h4 {
   background-color: #f1f1f1;
   position: fixed;
+   
   margin-top: 0;
    transition: 0.4s;
 }
 
 div#w3-include-right p {
-  padding-top: 30px;
+  padding-top: 0px;
        scroll-padding-top: 0px;
+       scroll-margin-top: 0px;
       line-height: 90%;
     font-size: 12pt;
     scroll-padding-block-start: 0px;
@@ -222,6 +235,7 @@ ul li.caret, ol li.caret {
   padding: 20px;
   overflow-y: auto;
   scroll-behavior: auto;
+  scroll-margin-top: 50px;
   scroll-snap-stop: always;
   background-attachment: local;
 }
