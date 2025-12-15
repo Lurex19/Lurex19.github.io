@@ -87,6 +87,11 @@ div#w3-include-right h4 {
    
   margin-top: 0;
    transition: 0.4s;
+    padding-top: 0px;
+       scroll-padding-top: 0px;
+       scroll-margin-top: 0px;
+    font-size: 12pt;
+    scroll-padding-block-start: 0px;
 }
 
 div#w3-include-right p {
