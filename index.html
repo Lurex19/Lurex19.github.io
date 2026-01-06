@@ -1,19 +1,28 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <html>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" 
-    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-  <link rel="stylesheet" href="./source/styles/mycss.css">
-  <link rel="apple-touch-icon" sizes="180x180" href="./source/files/favicon/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="./source/files/favicon/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="./source/files/favicon/favicon-16x16.png">
-  <title>Тора</title>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous">
+    <link rel="stylesheet" href="./source/styles/mycss.css">
+    <link rel="apple-touch-icon" sizes="180x180"
+      href="./source/files/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32"
+      href="./source/files/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16"
+      href="./source/files/favicon/favicon-16x16.png">
+    <title>Тора</title>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+      crossorigin="anonymous">
   </script>
-  <script>  
+    <script>  
     
     // Main HTML inclusion logic
     function includeHTML(fileToLoad, intoElement, callback) {
@@ -102,7 +111,7 @@
          // const addedText = "<br><br><p>из ТАЙНЫ НЕБЕСНЫЕ Автор: Эммануил Сведенборг</p>";
           const addedText1 = "<h5>из ТАЙНЫ НЕБЕСНЫЕ Автор: Эммануил Сведенборг</h5><br>";
 
-          document.getElementById("w3-include-right").innerHTML = addedText1 + selectedElements[0].innerHTML ;
+          document.getElementById("w3-include-right").innerHTML = selectedElements[0].innerHTML + addedText1;
           
           document.body.scrollTop = 0;
 		      document.getElementById("w3-include-right").scrollTop = 0;
@@ -162,67 +171,81 @@
     // Load all
     window.onload = refreshEvents;
   </script>
-</head>
+  </head>
 
-<body>
+  <body>
 
-  <!-- Navigation Bar -->
-  <header>
-    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+    <!-- Navigation Bar -->
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="index.html"><img
+              src="./source/files/tgc.gif" alt="..." style="height: 40px;"></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarNav" aria-controls="navbarNav"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button"
+                  data-bs-toggle="dropdown">Молитва</a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li id="aboutua" onclick="navclick(this)"><a
+                      class="dropdown-item" href="#"
+                      style="line-height: 160%;">Молитва укр.</a></li>
+                  <li id="about" onclick="navclick(this)"><a
+                      class="dropdown-item" href="#">Молитва</a></li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button"
+                  data-bs-toggle="dropdown">Тегилим</a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li id="tegilimua" onclick="navclick(this)"><a
+                      class="dropdown-item" href="#"
+                      style="line-height: 160%;">Тегілім укр.</a></li>
+                  <li id="tegilim" onclick="navclick(this)"><a
+                      class="dropdown-item" href="#">Тегилим</a></li>
+                </ul>
+              </li>
+              <li id="tora" onclick="navclick(this)" class="nav-item"><a
+                  class="nav-link" href="#" style="line-height: 120%;">Вся
+                  Тора</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Main Content -->
+    <section>
+      <div class="container-fluid mt-4" id="content-pane">
+        <div w3-include-html="source/fdays/inabout.html">
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="mt-4">
       <div class="container-fluid">
-        <a class="navbar-brand" href="index.html"><img src="./source/files/tgc.gif" alt="..." style="height: 40px;"></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Молитва</a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li id="aboutua" onclick="navclick(this)"><a class="dropdown-item" href="#" style="line-height: 160%;">Молитва укр.</a></li>
-                <li id="about" onclick="navclick(this)"><a class="dropdown-item" href="#">Молитва</a></li>
-              </ul>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Тегилим</a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li id="tegilimua" onclick="navclick(this)"><a class="dropdown-item" href="#" style="line-height: 160%;">Тегілім укр.</a></li>
-                <li id="tegilim" onclick="navclick(this)"><a class="dropdown-item" href="#">Тегилим</a></li>
-              </ul>
-            </li>
-            <li id="tora" onclick="navclick(this)" class="nav-item"><a class="nav-link" href="#" style="line-height: 120%;">Вся Тора</a></li>
-          </ul>
+        <div class="row">
+          <div class="col-lg-1 col-md-12 footer-text text-center">
+            <p style="color: aquamarine;">Контакт наша команда</p>
+          </div>
+          <div class="col-lg-2 col-md-12 footer-text text-center">
+            <h2>Email</h2>
+            <p style="color: aquamarine;">lurexgi@outlook.com</p>
+          </div>
+          <div class="col-lg-4 col-md-12 media-links">
+            <img style="width: 40px; margin-inline: 1em;"
+              src="source/files/tgс.png" alt="...">
+          </div>
         </div>
       </div>
-    </nav>
-  </header>
+    </footer>
 
-  <!-- Main Content -->
-  <section>
-    <div class="container-fluid mt-4" id="content-pane">
-      <div w3-include-html="source/fdays/inabout.html">
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="mt-4">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-lg-1 col-md-12 footer-text text-center">
-          <p style="color: aquamarine;">Контакт наша команда</p>
-        </div>
-        <div class="col-lg-2 col-md-12 footer-text text-center">
-          <h2>Email</h2>
-          <p style="color: aquamarine;">lurexgi@outlook.com</p>
-        </div>
-        <div class="col-lg-4 col-md-12 media-links">
-          <img style="width: 40px; margin-inline: 1em;" src="source/files/tgс.png" alt="...">
-        </div>
-      </div>
-    </div>
-  </footer>
-
-</body>
+  </body>
 
 </html>
