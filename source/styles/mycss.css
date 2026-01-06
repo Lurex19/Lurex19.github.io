@@ -73,14 +73,20 @@ h4 {
 
 div#w3-include-right h5 {
   font-family: "Arial", sans-serif;
-  font-size: 16pt;
+  font-size: 12pt;
   font-style: italic;
   font-weight: bold;
   margin-top: 0%;
   margin-bottom: 0%;
   text-align: left;
 }
-
+div.sticky {
+  position: fixed;
+  top: 0;
+  padding: 5px;
+  background-color: #cdcae8;
+  border: 2px solid #7193b9;
+}
 div#w3-include-right h4 {
   background-color: #f1f1f1;
   position: fixed;
@@ -237,7 +243,7 @@ ul li.caret, ol li.caret {
 /*027/05*/
 #w3-include-right.col-lg-5.col-md-12  {
   height: 1200px;
-  padding: 20px;
+  padding-top: 0px;
   overflow-y: auto;
   scroll-behavior: auto;
   scroll-margin-top: 50px;
