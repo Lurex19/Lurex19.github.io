@@ -16,7 +16,8 @@
       href="./source/files/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16"
       href="./source/files/favicon/favicon-16x16.png">
-    <title>Тора</title>
+      <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Hebrew:wght@400;600&display=swap" rel="stylesheet">
+    <title>Тора и Тайны Небесные — Интерактивный комментарий </title>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
@@ -111,8 +112,8 @@
          // const addedText = "<br><br><p>из ТАЙНЫ НЕБЕСНЫЕ Автор: Эммануил Сведенборг</p>";
           const addedText1 = "<h5>из ТАЙНЫ НЕБЕСНЫЕ Автор: Эммануил Сведенборг</h5><br>";
 
-          document.getElementById("w3-include-right").innerHTML = selectedElements[0].innerHTML + addedText1;
-          
+         document.getElementById("w3-include-right").innerHTML = selectedElements[0].innerHTML + addedText1;
+           document.getElementById("w3-include-right").innerHTML = selectedElements[0].innerHTML 
           document.body.scrollTop = 0;
 		      document.getElementById("w3-include-right").scrollTop = 0;
         }
