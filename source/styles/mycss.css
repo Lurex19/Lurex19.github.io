@@ -53,7 +53,7 @@ h2 {
 
 h3 {
   font-family: "Arial", sans-serif;
-  font-size: 20pt;
+  font-size: 16pt;
   font-style: italic;
   font-weight: bold;
   margin-top: 0%;
@@ -63,12 +63,84 @@ h3 {
 
 h4 {
   font-family: "Arial", sans-serif;
-  font-size: 18pt;
+  font-size: 15pt;
   font-style: italic;
   font-weight: bold;
   margin-top: 0%;
   margin-bottom: 0%;
   text-align: center;
+}
+.hebrew {
+  direction: rtl;
+  text-align: right;
+  font-family:  font-family: 'Assistant', sans-serif;
+  font-size: 22px;
+  line-height: 1.6;
+  letter-spacing: 0.6px;
+  background: #f8f8f8;
+  padding: 6px;
+  border-radius: 6px;
+   font-weight: 600;
+}
+.level-1 {
+  font-size: 19px;
+  font-weight: 500;
+  color: #111;
+}
+
+.level-2 {
+  font-size: 18px;
+  font-weight: 500;
+  color: #222;
+}
+
+.level-3 {
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+}
+
+.level-4 {
+  font-size: 15px;
+  font-weight: 400;
+  color: #444;
+}
+
+.level-5 {
+  font-size: 14px;
+  font-weight: 400;
+  color: #555;
+}
+
+.level-6 {
+  font-size: 13px;
+  font-weight: 300;
+  color: #666;
+  font-style: italic;
+}
+div#w3-include-right h2 {
+  font-size: 18px;
+  margin: 8px 0;
+}
+
+div#w3-include-right h3 {
+  font-size: 15px;
+  margin: 6px 0;
+  font-weight: 600;
+}
+
+ /*font-family: "Noto Sans Hebrew", Arial, sans-serif;*/
+div#w3-include-right.hebrew {
+  direction: rtl;
+  text-align: right;
+  font-family: 'Assistant', sans-serif;
+  font-size: 18px;
+  line-height: 1.6;
+  letter-spacing: 0.3px;
+  background: #f8f8f8;
+  padding: 6px;
+  border-radius: 6px;
+   font-weight: 600;
 }
 
 div#w3-include-right h5 {
@@ -87,29 +159,23 @@ div.sticky {
   background-color: #aea8ebff;
   border: 2px solid #7193b9;
 }
+
 div#w3-include-right h4 {
   background-color: #f1f1f1;
   position: fixed;
-   
-  margin-top: 0;
-   transition: 0.4s;
-    padding-top: 0px;
-       scroll-padding-top: 0px;
-       scroll-margin-top: 0px;
-    font-size: 12pt;
-    scroll-padding-block-start: 0px;
+  margin-bottom: 8px;
+  transition: 0.4s;
+  padding-top: 0px;
+  scroll-padding-top: 0px;
+  scroll-margin-top: 0px;
+  font-size: 12pt;
+  scroll-padding-block-start: 0px;
+  margin-top: 0; /* Убираем лишний отступ сверху у текста, чтобы не было слишком широко */
+  display: block;
 }
 
-div#w3-include-right p {
-  padding-top: 0px;
-       scroll-padding-top: 0px;
-       scroll-margin-top: 0px;
-      line-height: 90%;
-    font-size: 12pt;
-    scroll-padding-block-start: 0px;
-}   
-    
-ul li, ol li {
+ul li,
+ol li {
   font-family: Arial, sans-serif;
   font-size: 13pt;
   font-style: italic;
@@ -120,7 +186,8 @@ ul li, ol li {
   padding: 0;
 }
 
-ul, ol {
+ul,
+ol {
   font-family: Arial, sans-serif;
   font-size: 14pt;
   font-style: italic;
@@ -148,8 +215,9 @@ li ol.a:hover {
 }
 
 /**copy from 26/5*/
-ul li.caret, ol li.caret {
-    line-height: 0.7;
+ul li.caret,
+ol li.caret {
+  line-height: 0.7;
 }
 
 .caret::before {
@@ -241,7 +309,7 @@ ul li.caret, ol li.caret {
 }
 
 /*027/05*/
-#w3-include-right.col-lg-5.col-md-12  {
+#w3-include-right.col-lg-5.col-md-12 {
   height: 1200px;
   padding-top: 0px;
   overflow-y: auto;
@@ -264,11 +332,13 @@ ul li.caret, ol li.caret {
   color: rgb(144, 188, 241);
 }
 
-ul, #myUL {
+ul,
+#myUL {
   list-style-type: none;
 }
 
-.one, .two {
+.one,
+.two {
   padding: x 0;
   padding: y 0.5rem;
   font-weight: normal;
@@ -343,15 +413,28 @@ ul, #myUL {
   color: rgb(99, 184, 156);
 }
 
-.slide-text, .footer-text {
+.slide-text,
+.footer-text {
   color: aquamarine;
   margin: auto auto;
 }
 
-footer, .btn-outline-primary {
+footer,
+.btn-outline-primary {
   background: linear-gradient(270deg, #00009c 0%, #000000 100%);
 }
-
+footer,
+.analysis-footer formula {
+  font-family: Arial, sans-serif;
+  font-size: 14pt;
+  font-style: italic;
+  line-height: 100%;
+  color: rgb(15, 15, 15);
+  margin-bottom: 0%;
+  padding-top: 0px;
+  text-align: left;
+  background-color: rgb(143, 142, 142);
+}
 col-lg-1 col-md-12 footer-text p {
   color: aquamarine;
 }
