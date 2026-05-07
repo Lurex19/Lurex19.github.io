@@ -197,7 +197,14 @@ ol {
   margin: 0px 0px;
   padding: 0;
 }
-
+.section-note {border-left: 4px solid #ffd700;
+   background-color: #fdf6e3; 
+   padding: 15px; 
+   margin-top: 20px;
+    font-style: italic; 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+     color: #555;"
+     }
 .container-fluid.mt-4 {
   width: 96%;
 }
