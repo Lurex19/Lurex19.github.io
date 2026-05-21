@@ -16,7 +16,9 @@
       href="./source/files/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16"
       href="./source/files/favicon/favicon-16x16.png">
-      <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Hebrew:wght@400;600&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+Hebrew:wght@400;600&display=swap"
+      rel="stylesheet">
     <title>Тора и Тайны Небесные — Интерактивный комментарий </title>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
@@ -246,7 +248,85 @@
         </div>
       </div>
     </footer>
+    <div id="kabbalah-info-box" class="info-box-hidden">
+        <div class="info-box-header">
+            <span id="info-box-title">ЗНАЧЕНИЕ В СЕТКЕ:</span>
+            <button onclick="closeInfoBox()" class="info-box-close">&times;</button>
+        </div>
+        <div id="info-box-content"></div>
+    </div>
+    <script>
+(function() {
+    let kabbalahGrid = {};
+    let lastSelectedText = ""; // Переменная для хранения выделенного слова
 
+    // 1. Загрузка JSON
+    fetch('kabbalah_grid.json?v=' + Date.now())
+        .then(res => res.json())
+        .then(data => {
+            kabbalahGrid = data;
+            window.kabbalahGrid = data;
+            console.log("Словарь загружен. Ключи:", Object.keys(data));
+        })
+        .catch(err => console.error("Ошибка загрузки:", err));
+
+    // 2. Кнопка
+    const btn = document.createElement('button');
+    btn.innerHTML = 'Найти смысл';
+    btn.style.cssText = 'display:none; position:absolute; z-index:9999; padding:6px 12px; background:#4A90E2; color:white; border:none; border-radius:20px; cursor:pointer; font-weight:bold; box-shadow:0 4px 10px rgba(0,0,0,0.3);';
+    document.body.appendChild(btn);
+
+    // 3. Логика выделения
+    document.addEventListener('mouseup', function(e) {
+        const selection = window.getSelection();
+        const text = selection.toString().trim().toLowerCase();
+
+        if (text.length > 1) {
+            lastSelectedText = text; // Запоминаем слово
+            btn.style.top = (e.pageY + 15) + 'px';
+            btn.style.left = (e.pageX + 10) + 'px';
+            btn.style.display = 'block';
+        } else {
+            // Прячем кнопку, если кликнули не по ней
+            setTimeout(() => {
+                if (document.activeElement !== btn) btn.style.display = 'none';
+            }, 100);
+        }
+    });
+
+    // 4. Логика клика по кнопке (отдельно)
+    btn.onclick = function(e) {
+        // Мы НЕ отменяем стандартное поведение (убрали preventDefault)
+        // Мы НЕ блокируем событие для системы (убрали stopPropagation)
+
+        console.log("Проверяем слово:", lastSelectedText);
+console.log("ЗНАЧЕНИЕ КЛЮЧА ИЗ ОБЪЕКТА:", kabbalahGrid[lastSelectedText])
+        if (kabbalahGrid[lastSelectedText]) {
+      const infoBox = document.getElementById("kabbalah-info-box");
+const infoContent = document.getElementById("info-box-content");
+    // Вставляем текст как HTML, чтобы работали теги форматирования и абзацы
+    infoContent.innerHTML = kabbalahGrid[lastSelectedText];
+    // Показываем блок
+    infoBox.className = "info-box-visible";
+    // СРАЗУ ПРЯЧЕМ КНОПКУ «Найти смысл», как только открылось большое окно
+            btn.style.display = 'none';
+            // Перехватываем клик по крестику и принудительно прячем и окно, и кнопку
+            document.querySelector(".info-box-close").onclick = function() {
+                infoBox.className = "info-box-hidden";
+                btn.style.display = 'none'; // Железобетонно гасим кнопку «Найти смысл»
+            };
+            
+} else {
+  console.log("В словаре нет. Иду в Google.");
+            const searchUrl = 'https://www.google.com/search?q=' + encodeURIComponent('сведенборг ' + lastSelectedText);
+            window.open(searchUrl, '_blank');
+        }
+   btn.style.display = 'none';
+}
+
+
+})();
+ </script>
   </body>
 
 </html>
