@@ -243,88 +243,137 @@
           </div>
           <div class="col-lg-4 col-md-12 media-links">
             <img style="width: 40px; margin-inline: 1em;"
-              src="source/files/tgс.png" alt="...">
+              src="./source/files/tgc.gif" alt="...">
           </div>
         </div>
       </div>
     </footer>
     <div id="kabbalah-info-box" class="info-box-hidden">
-        <div class="info-box-header">
-            <span id="info-box-title">ЗНАЧЕНИЕ В СЕТКЕ:</span>
-            <button onclick="closeInfoBox()" class="info-box-close">&times;</button>
-        </div>
-        <div id="info-box-content"></div>
+      <div class="info-box-header">
+        <span id="info-box-title">ЗНАЧЕНИЕ В СЕТКЕ:</span>
+        <button onclick="closeInfoBox()" class="info-box-close">&times;</button>
+      </div>
+      <div id="info-box-content"></div>
     </div>
     <script>
 (function() {
     let kabbalahGrid = {};
-    let lastSelectedText = ""; // Переменная для хранения выделенного слова
+    let hebrewLettersData = {}; 
+    let lastSelectedText = "";
 
-    // 1. Загрузка JSON
-    fetch('kabbalah_grid.json?v=' + Date.now())
-        .then(res => res.json())
-        .then(data => {
-            kabbalahGrid = data;
-            window.kabbalahGrid = data;
-            console.log("Словарь загружен. Ключи:", Object.keys(data));
-        })
-        .catch(err => console.error("Ошибка загрузки:", err));
-
-    // 2. Кнопка
+    // 1. Создаем кнопку ДО того, как она понадобится в функциях
     const btn = document.createElement('button');
+    btn.id = 'find-meaning-btn'
     btn.innerHTML = 'Найти смысл';
-    btn.style.cssText = 'display:none; position:absolute; z-index:9999; padding:6px 12px; background:#4A90E2; color:white; border:none; border-radius:20px; cursor:pointer; font-weight:bold; box-shadow:0 4px 10px rgba(0,0,0,0.3);';
+
+    btn.style.cssText = 'display:none; position:absolute; z-index:10000; padding:6px 12px; background:#4A90E2; color:white; border:none; border-radius:20px; cursor:pointer; font-weight:bold; box-shadow:0 4px 10px rgba(0,0,0,0.3);';
     document.body.appendChild(btn);
 
-    // 3. Логика выделения
-    document.addEventListener('mouseup', function(e) {
-        const selection = window.getSelection();
-        const text = selection.toString().trim().toLowerCase();
+    // 2. Загрузка данных
+    fetch('kabbalah_grid.json?v=' + Date.now())
+        .then(res => res.json())
+        .then(data => { kabbalahGrid = data; });
+
+    fetch('hebrew_letters.json?v=' + Date.now())
+        .then(res => res.json())
+        .then(data => { hebrewLettersData = data; });
+
+    // 3. Функция анализа
+    function getWordInfo(word) {
+        const isHebrew = /[\u0590-\u05FF]/.test(word);
+        if (isHebrew) {
+            let sum = 0;
+            let details = "<ul>";
+            for (let char of word) {
+                if (hebrewLettersData[char]) {
+                    sum += hebrewLettersData[char].val;
+                    details += `<li><b>${char}</b> (${hebrewLettersData[char].val}): ${hebrewLettersData[char].desc}</li>`;
+                }
+            }
+            return `<h4>Гематрия: ${sum}</h4>${details}</ul>`;
+        } else {
+            if (kabbalahGrid[word]) {
+            const entry = kabbalahGrid[word];
+            // Проверяем, является ли значение объектом или старым текстом
+            const desc = typeof entry === 'object' ? entry.desc : entry;
+            const world = typeof entry === 'object' ? `<br><br><b>Мир:</b> ${entry.world || 'Не определен'}` : "";
+            
+            return `<h4>${word.toUpperCase()}</h4>${desc}${world}`;
+            // Возвращаем результат или null, если пусто
+          
+        }
+    }
+return null;
+}
+
+    // 4. Логика выделения
+ function handleSelection(e) {
+    // 1. Если клик был внутри кнопки, ничего не делаем
+    if (e.target === btn || btn.contains(e.target)) return;
+
+    setTimeout(() => {
+        const selectionObj = window.getSelection();
+        const selectedString = selectionObj.toString();
+        
+        const text = selectedString.trim().replace(/[.,!?;:"]+$/, "").toLowerCase();
 
         if (text.length > 1) {
-            lastSelectedText = text; // Запоминаем слово
-            btn.style.top = (e.pageY + 15) + 'px';
-            btn.style.left = (e.pageX + 10) + 'px';
-            btn.style.display = 'block';
-        } else {
-            // Прячем кнопку, если кликнули не по ней
-            setTimeout(() => {
-                if (document.activeElement !== btn) btn.style.display = 'none';
-            }, 100);
-        }
-    });
-
-    // 4. Логика клика по кнопке (отдельно)
-    btn.onclick = function(e) {
-        // Мы НЕ отменяем стандартное поведение (убрали preventDefault)
-        // Мы НЕ блокируем событие для системы (убрали stopPropagation)
-
-        console.log("Проверяем слово:", lastSelectedText);
-console.log("ЗНАЧЕНИЕ КЛЮЧА ИЗ ОБЪЕКТА:", kabbalahGrid[lastSelectedText])
-        if (kabbalahGrid[lastSelectedText]) {
-      const infoBox = document.getElementById("kabbalah-info-box");
-const infoContent = document.getElementById("info-box-content");
-    // Вставляем текст как HTML, чтобы работали теги форматирования и абзацы
-    infoContent.innerHTML = kabbalahGrid[lastSelectedText];
-    // Показываем блок
-    infoBox.className = "info-box-visible";
-    // СРАЗУ ПРЯЧЕМ КНОПКУ «Найти смысл», как только открылось большое окно
-            btn.style.display = 'none';
-            // Перехватываем клик по крестику и принудительно прячем и окно, и кнопку
-            document.querySelector(".info-box-close").onclick = function() {
-                infoBox.className = "info-box-hidden";
-                btn.style.display = 'none'; // Железобетонно гасим кнопку «Найти смысл»
-            };
+            lastSelectedText = text;
             
-} else {
-  console.log("В словаре нет. Иду в Google.");
+            if (selectionObj.rangeCount > 0) {
+                const range = selectionObj.getRangeAt(0);
+                const rect = range.getBoundingClientRect();
+                
+                btn.style.top = (rect.bottom + window.scrollY + 10) + 'px';
+                btn.style.left = (rect.left + window.scrollX) + 'px';
+                btn.style.display = 'block';
+            }
+        } else {
+            // Скрываем, если выделение сброшено
+            btn.style.display = 'none';
+        }
+    }, 150);
+}
+    document.addEventListener('mouseup', handleSelection);
+    document.addEventListener('touchend', handleSelection);
+
+    // 5. Логика клика (теперь btn точно определен)
+    btn.onclick = function(e) {
+        e.stopPropagation();
+        btn.style.display = 'none';
+       
+        const infoBox = document.getElementById("kabbalah-info-box");
+        const infoContent = document.getElementById("info-box-content");
+        
+        const result = getWordInfo(lastSelectedText);
+
+        if (result) {
+            infoContent.innerHTML = result;
+            infoBox.className = "info-box-visible";
+        } else {
+            console.log("Слово не найдено, открываю Google.");
             const searchUrl = 'https://www.google.com/search?q=' + encodeURIComponent('сведенборг ' + lastSelectedText);
             window.open(searchUrl, '_blank');
         }
-   btn.style.display = 'none';
-}
-
-
+    };
+ window.closeInfoBox = function() {
+    const infoBox = document.getElementById("kabbalah-info-box");
+    if (infoBox) {
+        infoBox.className = "info-box-hidden";
+    }
+    
+    // Теперь ID найден, и кнопка успешно скроется
+    const btn = document.getElementById("find-meaning-btn");
+    if (btn) {
+        btn.style.display = "none";
+    }
+    
+    // Снимаем выделение
+    const selection = window.getSelection();
+    if (selection) {
+        selection.removeAllRanges();
+    }
+};
 })();
  </script>
   </body>
