@@ -266,7 +266,7 @@
     btn.id = 'find-meaning-btn'
     btn.innerHTML = 'Найти смысл';
 
-    btn.style.cssText = 'display:none; position:absolute; z-index:10000; padding:6px 12px; background:#4A90E2; color:white; border:none; border-radius:20px; cursor:pointer; font-weight:bold; box-shadow:0 4px 10px rgba(0,0,0,0.3);';
+    btn.style.cssText = 'display:none; position:absolute;pointerEvents:auto; z-index:999999; padding:6px 12px; background:#4A90E2; color:white; border:none; border-radius:20px; cursor:pointer; font-weight:bold; box-shadow:0 4px 10px rgba(0,0,0,0.3);';
     document.body.appendChild(btn);
 
     // 2. Загрузка данных
@@ -308,31 +308,40 @@ return null;
 
     // 4. Логика выделения
  function handleSelection(e) {
-    // 1. Если клик был внутри кнопки, ничего не делаем
+    // 1. Исключаем клик по самой кнопке
     if (e.target === btn || btn.contains(e.target)) return;
 
+    // 2. Используем requestAnimationFrame для более плавного позиционирования
+    // и чтобы дождаться завершения действий браузера
     setTimeout(() => {
         const selectionObj = window.getSelection();
-        const selectedString = selectionObj.toString();
         
+        // Проверка: есть ли вообще выделение?
+        if (!selectionObj || selectionObj.rangeCount === 0) {
+            btn.style.display = 'none';
+            return;
+        }
+
+        const selectedString = selectionObj.toString();
         const text = selectedString.trim().replace(/[.,!?;:"]+$/, "").toLowerCase();
 
         if (text.length > 1) {
             lastSelectedText = text;
             
-            if (selectionObj.rangeCount > 0) {
-                const range = selectionObj.getRangeAt(0);
-                const rect = range.getBoundingClientRect();
-                
-                btn.style.top = (rect.bottom + window.scrollY + 10) + 'px';
-                btn.style.left = (rect.left + window.scrollX) + 'px';
-                btn.style.display = 'block';
-            }
+            const range = selectionObj.getRangeAt(0);
+            const rect = range.getBoundingClientRect();
+            
+            // Если rect пустой (бывает на Android), кнопка не появится
+            if (rect.width === 0 && rect.height === 0) return;
+
+            btn.style.top = (rect.bottom + window.scrollY + 10) + 'px';
+            btn.style.left = (rect.left + window.scrollX) + 'px';
+            btn.style.zIndex = '2147483647';
+            btn.style.display = 'block';
         } else {
-            // Скрываем, если выделение сброшено
             btn.style.display = 'none';
         }
-    }, 150);
+    }, 350);
 }
     document.addEventListener('mouseup', handleSelection);
     document.addEventListener('touchend', handleSelection);
