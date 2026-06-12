@@ -346,7 +346,18 @@ ol li.caret {
   scroll-snap-stop: always;
   background-attachment: local;
 }
-
+#w3-include-left {
+    -webkit-user-select: none; /* Для Safari */
+    -moz-user-select: none;    /* Для старых Firefox */
+    -ms-user-select: none;     /* Для IE/Edge */
+    user-select: none;         /* Стандартное свойство */
+    
+    /* Дополнительно убираем подсветку при нажатии */
+    -webkit-tap-highlight-color: transparent;
+}
+#w3-include-right, #w3-include-center {
+    -webkit-tap-highlight-color: transparent;
+}
 .col-lg-8.col-md-12 {
   height: 1200px;
   overflow-y: auto;
@@ -500,8 +511,17 @@ col-lg-1 col-md-12 footer-text p {
     z-index: 9999;   /* Поверх абсолютно всего на сайте */
     transition: all 0.3s ease;
     font-family: sans-serif; /* Чистый системный шрифт */
+    max-height: 400px;      /* Ограничивает высоту окошка (подберите под себя) */
+    overflow-y: auto;       /* Включает вертикальную прокрутку, если контент длиннее */
+    padding-right: 10px;
 }
-
+#kabbalah-info-box::-webkit-scrollbar {
+    width: 8px;
+}
+#kabbalah-info-box::-webkit-scrollbar-thumb {
+    background-color: #4A90E2; /* Цвет под цвет вашей кнопки */
+    border-radius: 4px;
+}
 /* Шапка блока */
 .info-box-header {
     padding: 12px 18px;
