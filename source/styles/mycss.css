@@ -335,7 +335,14 @@ ol li.caret {
   height: 1200px;
   overflow-y: auto;
 }
-
+#w3-include-center, #w3-include-right {
+    -webkit-user-select: none; /* Запрещает системный выбор */
+    user-select: none;
+}
+#w3-include-center p, #w3-include-right p {
+    -webkit-user-select: text;
+    user-select: text;
+}
 /*027/05*/
 #w3-include-right.col-lg-5.col-md-12 {
   height: 1200px;
@@ -583,10 +590,10 @@ col-lg-1 col-md-12 footer-text p {
     visibility: visible;
     transform: translateY(0);
 }
-//.modal-content {
+/*.modal-content {
  //   max-height: 80vh; /* Окно не займет больше 80% высоты экрана */
-  //  overflow-y: auto; /* Если текст длиннее, внутри окна появится аккуратная прокрутка */
-//}
+  /*  overflow-y: auto; /* Если текст длиннее, внутри окна появится аккуратная прокрутка */
+/*
 /* Шапка блока с кнопкой закрытия */
 
 
