@@ -72,36 +72,36 @@ h4 {
 }
 /* Скрытый блок */
 .info-box-hidden {
-    display: none;
+  display: none;
 }
 
 /* Видимый блок */
 .info-box-visible {
-    display: block;
-    position: fixed; /* Именно fixed, а не absolute! */
-    top: 20px;
-    right: 20px;
-    width: 300px;
-    max-height: 80vh;
-    overflow-y: auto;
-    background: white;
-    border: 2px solid #4A90E2;
-    padding: 15px;
-    z-index: 10000;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-    border-radius: 8px;
+  display: block;
+  position: fixed; /* Именно fixed, а не absolute! */
+  top: 20px;
+  right: 20px;
+  width: 300px;
+  max-height: 80vh;
+  overflow-y: auto;
+  background: white;
+  border: 2px solid #4a90e2;
+  padding: 15px;
+  z-index: 10000;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
 }
 .hebrew {
   direction: rtl;
   text-align: right;
-  font-family: 'Assistant', sans-serif;
+  font-family: "Assistant", sans-serif;
   font-size: 22px;
   line-height: 1.6;
   letter-spacing: 0.6px;
   background: #f8f8f8;
   padding: 6px;
   border-radius: 6px;
-   font-weight: 600;
+  font-weight: 600;
 }
 .level-1 {
   font-size: 19px;
@@ -150,18 +150,18 @@ div#w3-include-right h3 {
   font-weight: 600;
 }
 
- /*font-family: "Noto Sans Hebrew", Arial, sans-serif;*/
+/*font-family: "Noto Sans Hebrew", Arial, sans-serif;*/
 div#w3-include-right.hebrew {
   direction: rtl;
   text-align: right;
-  font-family: 'Assistant', sans-serif;
+  font-family: "Assistant", sans-serif;
   font-size: 18px;
   line-height: 1.6;
   letter-spacing: 0.3px;
   background: #f8f8f8;
   padding: 6px;
   border-radius: 6px;
-   font-weight: 600;
+  font-weight: 600;
 }
 
 div#w3-include-right h5 {
@@ -218,14 +218,15 @@ ol {
   margin: 0px 0px;
   padding: 0;
 }
-.section-note {border-left: 4px solid #ffd700;
-   background-color: #fdf6e3; 
-   padding: 15px; 
-   margin-top: 20px;
-    font-style: italic; 
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-     color: #555;
-     }
+.section-note {
+  border-left: 4px solid #ffd700;
+  background-color: #fdf6e3;
+  padding: 15px;
+  margin-top: 20px;
+  font-style: italic;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #555;
+}
 .container-fluid.mt-4 {
   width: 96%;
 }
@@ -335,13 +336,36 @@ ol li.caret {
   height: 1200px;
   overflow-y: auto;
 }
-#w3-include-center, #w3-include-right {
-    -webkit-user-select: none; /* Запрещает системный выбор */
-    user-select: none;
+
+********************************18.06
+.scroll-col {
+    height: 100% !important;        /* Строго по высоте родителя */
+    overflow-y: auto !important;    /* Включаем прокрутку */
+    min-height: 0;                  /* Важно для Flexbox */
+    display: flex;
+    flex-direction: column;
 }
-#w3-include-center p, #w3-include-right p {
-    -webkit-user-select: text;
-    user-select: text;
+.scroll-col *, 
+#w3-include-left *, 
+#w3-include-center *, 
+#w3-include-right * {
+    max-width: 100%;
+}
+
+/* 2. Колонки должны быть Flex-элементами */
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+
+#w3-include-right {
+  -webkit-user-select: none; /* Запрещает системный выбор */
+  user-select: none;
+}
+#w3-include-center p,
+#w3-include-right p {
+  -webkit-user-select: text;
+  user-select: text;
 }
 /*027/05*/
 #w3-include-right.col-lg-5.col-md-12 {
@@ -354,16 +378,17 @@ ol li.caret {
   background-attachment: local;
 }
 #w3-include-left {
-    -webkit-user-select: none; /* Для Safari */
-    -moz-user-select: none;    /* Для старых Firefox */
-    -ms-user-select: none;     /* Для IE/Edge */
-    user-select: none;         /* Стандартное свойство */
-    
-    /* Дополнительно убираем подсветку при нажатии */
-    -webkit-tap-highlight-color: transparent;
+  -webkit-user-select: none; /* Для Safari */
+  -moz-user-select: none; /* Для старых Firefox */
+  -ms-user-select: none; /* Для IE/Edge */
+  user-select: none; /* Стандартное свойство */
+
+  /* Дополнительно убираем подсветку при нажатии */
+  -webkit-tap-highlight-color: transparent;
 }
-#w3-include-right, #w3-include-center {
-    -webkit-tap-highlight-color: transparent;
+#w3-include-right,
+#w3-include-center {
+  -webkit-tap-highlight-color: transparent;
 }
 .col-lg-8.col-md-12 {
   height: 1200px;
@@ -504,101 +529,100 @@ col-lg-1 col-md-12 footer-text p {
 /* Базовый стиль информационного блока */
 /* Переносим блок в ВЕРХНИЙ ПРАВЫЙ угол и увеличиваем читаемость */
 #kabbalah-info-box {
-    position: fixed;
-    top: 20px;       /* Отступ сверху */
-    right: 20px;     /* Отступ справа */
-    width: 420px;    /* Сделали чуть шире для удобства чтения */
-    max-height: 70vh; /* Занимает до 70% высоты экрана, если текст огромный */
-    background-color: #ffffff;
-    border: 2px solid #a1a1a1; /* Сделали рамку четче */
-    border-radius: 12px;       /* Скругленные аккуратные углы */
-    box-shadow: 0 8px 30px rgba(0,0,0,0.25);
-    display: flex;
-    flex-direction: column;
-    z-index: 9999;   /* Поверх абсолютно всего на сайте */
-    transition: all 0.3s ease;
-    font-family: sans-serif; /* Чистый системный шрифт */
-    max-height: 400px;      /* Ограничивает высоту окошка (подберите под себя) */
-    overflow-y: auto;       /* Включает вертикальную прокрутку, если контент длиннее */
-    padding-right: 10px;
+  position: fixed;
+  top: 20px; /* Отступ сверху */
+  right: 20px; /* Отступ справа */
+  width: 420px; /* Сделали чуть шире для удобства чтения */
+  max-height: 70vh; /* Занимает до 70% высоты экрана, если текст огромный */
+  background-color: #ffffff;
+  border: 2px solid #a1a1a1; /* Сделали рамку четче */
+  border-radius: 12px; /* Скругленные аккуратные углы */
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  z-index: 9999; /* Поверх абсолютно всего на сайте */
+  transition: all 0.3s ease;
+  font-family: sans-serif; /* Чистый системный шрифт */
+  max-height: 400px; /* Ограничивает высоту окошка (подберите под себя) */
+  overflow-y: auto; /* Включает вертикальную прокрутку, если контент длиннее */
+  padding-right: 10px;
 }
 #kabbalah-info-box::-webkit-scrollbar {
-    width: 8px;
+  width: 8px;
 }
 #kabbalah-info-box::-webkit-scrollbar-thumb {
-    background-color: #4A90E2; /* Цвет под цвет вашей кнопки */
-    border-radius: 4px;
+  background-color: #4a90e2; /* Цвет под цвет вашей кнопки */
+  border-radius: 4px;
 }
 /* Шапка блока */
 .info-box-header {
-    padding: 12px 18px;
-    background-color: #f0f0f0;
-    border-bottom: 1px solid #ddd;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  padding: 12px 18px;
+  background-color: #f0f0f0;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 /* Сделали заголовок крупнее */
 #info-box-title {
-    font-size: 16px;
-    font-weight: bold;
-    color: #333;
-    letter-spacing: 0.5px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  letter-spacing: 0.5px;
 }
 
 /* ПОЧИНКА И УКРУПНЕНИЕ КРЕСТИКА */
 .info-box-close {
-    background: none;
-    border: none;
-    font-size: 28px;     /* Сделали крестик большим, чтобы легко попадать пальцем */
-    font-weight: bold;
-    color: #888;
-    cursor: pointer;
-    padding: 0 5px;
-    line-height: 1;
-    transition: color 0.2s;
+  background: none;
+  border: none;
+  font-size: 28px; /* Сделали крестик большим, чтобы легко попадать пальцем */
+  font-weight: bold;
+  color: #888;
+  cursor: pointer;
+  padding: 0 5px;
+  line-height: 1;
+  transition: color 0.2s;
 }
 
 .info-box-close:hover {
-    color: #000; /* При наведении становится черным */
+  color: #000; /* При наведении становится черным */
 }
 
 /* КРИТИЧЕСКОЕ УКРУПНЕНИЕ ШРИФТА ДЛЯ ДЛИННОГО ТЕКСТА */
 #info-box-content {
-    padding: 18px;
-    font-size: 16px;     /* Увеличили размер букв (было 14px) */
-    line-height: 1.6;    /* Увеличили межстрочный интервал, чтобы глаза не уставали */
-    overflow-y: auto;    /* Автоматический скролл при длинном тексте */
-    color: #111;         /* Сделали текст более контрастным/темным */
+  padding: 18px;
+  font-size: 16px; /* Увеличили размер букв (было 14px) */
+  line-height: 1.6; /* Увеличили межстрочный интервал, чтобы глаза не уставали */
+  overflow-y: auto; /* Автоматический скролл при длинном тексте */
+  color: #111; /* Сделали текст более контрастным/темным */
 }
 
 /* Выделение каббалистических терминов внутри текста (если будете использовать <b>) */
-#info-box-content b, #info-box-content strong {
-    color: #0056b3;      /* Выделенные слова станут красивого глубокого синего цвета */
+#info-box-content b,
+#info-box-content strong {
+  color: #0056b3; /* Выделенные слова станут красивого глубокого синего цвета */
 }
 
 /* Анимации видимости */
 .info-box-hidden {
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(-10px); /* При скрытии уходит чуть вверх */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px); /* При скрытии уходит чуть вверх */
 }
 
 .info-box-visible {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
 }
 /*.modal-content {
  //   max-height: 80vh; /* Окно не займет больше 80% высоты экрана */
-  /*  overflow-y: auto; /* Если текст длиннее, внутри окна появится аккуратная прокрутка */
+/*  overflow-y: auto; /* Если текст длиннее, внутри окна появится аккуратная прокрутка */
 /*
 /* Шапка блока с кнопкой закрытия */
 
-
 /* КРИТИЧЕСКИЙ МЕХАНИЗМ ДЛЯ ДЛИННОГО ТЕКСТА */
-
 
 @keyframes call {
   0%,
