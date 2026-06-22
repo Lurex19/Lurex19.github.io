@@ -307,13 +307,12 @@
                 const rect = range.getBoundingClientRect();
                 
                 if (rect.width > 0) {
-                  btn.style.position = 'fixed';
-btn.style.bottom = '20px';
-btn.style.right = '20px';
-btn.style.display = 'block';
-                /*    btn.style.top = (rect.bottom + window.scrollY + 10) + 'px';
-                    btn.style.left = (rect.left + window.scrollX) + 'px';
-                    btn.style.display = 'block';*/
+                 btn.style.position = 'fixed';
+
+                  btn.style.top = (rect.bottom +  8) + 'px';
+                  /*  btn.style.left = (rect.left + window.scrollX) + 'px';*/
+                  btn.style.left = rect.left + 'px';
+                    btn.style.display = 'block';
                 }
             } else {
                 btn.style.display = 'none';
@@ -323,6 +322,7 @@ btn.style.display = 'block';
 
     document.addEventListener('mouseup', handleSelection);
     document.addEventListener('touchend', handleSelection);
+       document.addEventListener('selectionchange', handleSelection);
 
     // 5. Логика клика
     btn.onclick = function(e) {
