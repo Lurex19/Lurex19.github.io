@@ -139,40 +139,7 @@ h4 {
   color: #666;
   font-style: italic;
 }
-div#w3-include-right h2 {
-  font-size: 18px;
-  margin: 8px 0;
-}
 
-div#w3-include-right h3 {
-  font-size: 15px;
-  margin: 6px 0;
-  font-weight: 600;
-}
-
-/*font-family: "Noto Sans Hebrew", Arial, sans-serif;*/
-div#w3-include-right.hebrew {
-  direction: rtl;
-  text-align: right;
-  font-family: "Assistant", sans-serif;
-  font-size: 18px;
-  line-height: 1.6;
-  letter-spacing: 0.3px;
-  background: #f8f8f8;
-  padding: 6px;
-  border-radius: 6px;
-  font-weight: 600;
-}
-
-div#w3-include-right h5 {
-  font-family: "Arial", sans-serif;
-  font-size: 12pt;
-  font-style: italic;
-  font-weight: bold;
-  margin-top: 0%;
-  margin-bottom: 0%;
-  text-align: left;
-}
 div.sticky {
   position: fixed;
   top: 0;
@@ -181,19 +148,6 @@ div.sticky {
   border: 2px solid #7193b9;
 }
 
-div#w3-include-right h4 {
-  background-color: #f1f1f1;
-  position: fixed;
-  margin-bottom: 8px;
-  transition: 0.4s;
-  padding-top: 0px;
-  scroll-padding-top: 0px;
-  scroll-margin-top: 0px;
-  font-size: 12pt;
-  scroll-padding-block-start: 0px;
-  margin-top: 0; /* Убираем лишний отступ сверху у текста, чтобы не было слишком широко */
-  display: block;
-}
 
 ul li,
 ol li {
@@ -333,7 +287,7 @@ ol li.caret {
 }
 
 .col-lg-5.col-md-12 {
-  height: 1200px;
+  /*.height: 1200px;*/
   overflow-y: auto;
 }
 
@@ -356,7 +310,57 @@ ol li.caret {
 *, *:before, *:after {
     box-sizing: border-box;
 }
+div#w3-include-right h2 {
+  font-size: 18px;
+  margin: 8px 0;
+}
+#w3-include-left {
+    height: 100vh !important;
+    overflow-y: auto !important;
+ 
+}
+div#w3-include-right h3 {
+  font-size: 15px;
+  margin: 6px 0;
+  font-weight: 600;
+}
 
+/*font-family: "Noto Sans Hebrew", Arial, sans-serif;*/
+div#w3-include-right.hebrew {
+  direction: rtl;
+  text-align: right;
+  font-family: "Assistant", sans-serif;
+  font-size: 18px;
+  line-height: 1.6;
+  letter-spacing: 0.3px;
+  background: #f8f8f8;
+  padding: 6px;
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+div#w3-include-right h5 {
+  font-family: "Arial", sans-serif;
+  font-size: 12pt;
+  font-style: italic;
+  font-weight: bold;
+  margin-top: 0%;
+  margin-bottom: 0%;
+  text-align: left;
+}
+div#w3-include-right h4 {
+  background-color: #f1f1f1;
+  position: fixed;
+  margin-bottom: 8px;
+  transition: 0.4s;
+  padding-top: 0px;
+  scroll-padding-top: 0px;
+  scroll-margin-top: 0px;
+  font-size: 12pt;
+  scroll-padding-block-start: 0px;
+  margin-top: 0; /* Убираем лишний отступ сверху у текста, чтобы не было слишком широко */
+  display: block;
+}
 
 #w3-include-right {
   -webkit-user-select: none; /* Запрещает системный выбор */
@@ -369,7 +373,7 @@ ol li.caret {
 }
 /*027/05*/
 #w3-include-right.col-lg-5.col-md-12 {
-  height: 1200px;
+ /* height: 1200px;*/
   padding-top: 0px;
   overflow-y: auto;
   scroll-behavior: auto;
@@ -391,7 +395,7 @@ ol li.caret {
   -webkit-tap-highlight-color: transparent;
 }
 .col-lg-8.col-md-12 {
-  height: 1200px;
+  /*height: 1200px;*/
   overflow-y: auto;
 }
 
@@ -418,6 +422,7 @@ ul,
   line-height: 100%;
   color: blue;
   display: flex;
+  
   flex-direction: column;
   padding-left: 0;
   margin-bottom: 0;
