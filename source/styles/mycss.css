@@ -292,6 +292,7 @@ ol li.caret {
 }
 
 ********************************18.06
+
 .scroll-col {
     height: 100% !important;        /* Строго по высоте родителя */
     overflow-y: auto !important;    /* Включаем прокрутку */
@@ -309,6 +310,11 @@ ol li.caret {
 /* 2. Колонки должны быть Flex-элементами */
 *, *:before, *:after {
     box-sizing: border-box;
+}
+#w3-include-left,#w3-include-center {
+    height: 100vh !important;
+   /* overflow-y: auto !important;*/
+  
 }
 div#w3-include-right h2 {
   font-size: 18px;
