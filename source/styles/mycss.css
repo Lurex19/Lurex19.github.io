@@ -314,11 +314,7 @@ div#w3-include-right h2 {
   font-size: 18px;
   margin: 8px 0;
 }
-#w3-include-left {
-    height: 100vh !important;
-    overflow-y: auto !important;
- 
-}
+
 div#w3-include-right h3 {
   font-size: 15px;
   margin: 6px 0;
