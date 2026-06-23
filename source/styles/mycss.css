@@ -307,6 +307,9 @@ ol li.caret {
     max-width: 100%;
 }
 
+.col-lg-10 {
+overflow-y: auto;
+}
 /* 2. Колонки должны быть Flex-элементами */
 *, *:before, *:after {
     box-sizing: border-box;
