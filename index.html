@@ -337,9 +337,15 @@
             if (result) {
                 infoContent.innerHTML = result;
                 infoBox.className = "info-box-visible";
-            } else {
-                window.open('https://www.google.com/search?q=' + encodeURIComponent('сведенборг ' + lastSelectedText), '_blank');
             }
+            /* else {
+                window.open('https://www.google.com/search?q=' + encodeURIComponent('сведенборг ' + lastSelectedText), '_blank');
+            }*/
+const selection = window.getSelection();
+    if (selection) {
+        selection.removeAllRanges();
+    }
+
         }
     };
 
