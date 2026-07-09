@@ -95,13 +95,13 @@ h4 {
   direction: rtl;
   text-align: right;
   font-family: "Assistant", sans-serif;
-  font-size: 22px;
-  line-height: 1.6;
+  font-size: 18px;
+  line-height: 1.3;
   letter-spacing: 0.6px;
   background: #f8f8f8;
   padding: 6px;
   border-radius: 6px;
-  font-weight: 600;
+  font-weight: 550;
 }
 .level-1 {
   font-size: 19px;
@@ -291,7 +291,7 @@ ol li.caret {
   overflow-y: auto;
 }
 
-********************************18.06
+*******************************
 
 .scroll-col {
     height: 100% !important;        /* Строго по высоте родителя */
@@ -314,7 +314,7 @@ overflow-y: auto;
 *, *:before, *:after {
     box-sizing: border-box;
 }
-#w3-include-left,#w3-include-center {
+#w3-include-left,#w3-include-center,#w3-include-right {
     height: 100vh !important;
    /* overflow-y: auto !important;*/
   
@@ -336,12 +336,12 @@ div#w3-include-right.hebrew {
   text-align: right;
   font-family: "Assistant", sans-serif;
   font-size: 18px;
-  line-height: 1.6;
+  line-height: 1.1;
   letter-spacing: 0.3px;
   background: #f8f8f8;
   padding: 6px;
   border-radius: 6px;
-  font-weight: 600;
+  font-weight: 550;
 }
 
 div#w3-include-right h5 {
