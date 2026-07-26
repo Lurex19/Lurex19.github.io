@@ -291,8 +291,6 @@ ol li.caret {
   overflow-y: auto;
 }
 
-*******************************
-
 .scroll-col {
     height: 100% !important;        /* Строго по высоте родителя */
     overflow-y: auto !important;    /* Включаем прокрутку */
@@ -419,8 +417,6 @@ ul,
 
 .one,
 .two {
-  padding: x 0;
-  padding: y 0.5rem;
   font-weight: normal;
   font-family: Arial, sans-serif;
   font-size: 11pt;
@@ -480,7 +476,7 @@ ul,
 }
 
 .sidebar {
-  background: linear-gradient(270deg #00009c 0%, #000000 100%);
+  background: linear-gradient(270deg, #00009c 0%, #000000 100%);
   color: rgb(58, 151, 120);
 }
 
@@ -516,7 +512,7 @@ footer,
   text-align: left;
   background-color: rgb(143, 142, 142);
 }
-col-lg-1 col-md-12 footer-text p {
+.col-lg-1.col-md-12.footer-text p {
   color: aquamarine;
 }
 
@@ -534,6 +530,26 @@ col-lg-1 col-md-12 footer-text p {
 
 .call-anim {
   animation: call 2s ease 0s infinite normal forwards;
+}
+
+/* Плавающая кнопка "Найти смысл" (создаётся в click-to-explain.js) */
+#find-meaning-btn {
+  display: none;
+  position: fixed;
+  z-index: 2147483647;
+  padding: 6px 12px;
+  background: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Видимое состояние кнопки (переключается из JS) */
+#find-meaning-btn.is-visible {
+  display: block;
 }
 
 /* Базовый стиль информационного блока */
