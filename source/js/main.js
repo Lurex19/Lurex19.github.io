@@ -166,7 +166,7 @@ function loadDocRightSelector(selector, fileName) {
     const selectedElements = document.querySelectorAll("div." + selector);
     if (selectedElements.length >= 1) {
     //*  const addedText1 = "<h5>из ТАЙНЫ НЕБЕСНЫЕ Автор: Эммануил Сведенборг</h5><br>";*/
-
+ const addedText1 = "<h5> </h5><br>";
       document.getElementById("w3-include-right").innerHTML = selectedElements[0].innerHTML + addedText1;
       document.body.scrollTop = 0;
       document.getElementById("w3-include-right").scrollTop = 0;
