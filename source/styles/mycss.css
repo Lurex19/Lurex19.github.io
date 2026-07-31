@@ -21,7 +21,8 @@ p {
   width: 100%;
 }
 
-.abouti {
+.abouti,
+.abouti1 {
   background-color: lightgrey;
   width: 1000px;
   border: 15px solid green;
@@ -29,6 +30,23 @@ p {
   margin: auto;
   text-align: center;
   align-self: center;
+}
+.abouti ul{
+    margin:6px 0 14px 22px;
+    padding:0;
+}
+
+.abouti li{
+    margin:3px 0;
+}
+.abouti1 h2{
+    margin-top:28px;
+    margin-bottom:10px;
+}
+
+.abouti1 p{
+    margin:8px 0;
+    line-height:1.5;
 }
 
 h1 {
