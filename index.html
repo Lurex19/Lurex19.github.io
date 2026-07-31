@@ -4,18 +4,31 @@
   <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta http-equiv="Pragma" content="no-cache">
-  <meta http-equiv="Expires" content="0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <meta http-equiv="Cache-Control"
+      content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous">
     <link rel="stylesheet" href="./source/styles/mycss.css?v=1.1">
-    <link rel="apple-touch-icon" sizes="180x180" href="./source/files/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="./source/files/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="./source/files/favicon/favicon-16x16.png">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Hebrew:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="180x180"
+      href="./source/files/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32"
+      href="./source/files/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16"
+      href="./source/files/favicon/favicon-16x16.png">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+Hebrew:wght@400;600&display=swap"
+      rel="stylesheet">
 
     <title>Тора и Тайны Небесные — Интерактивный комментарий </title>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous">
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+      crossorigin="anonymous">
   </script>
   </head>
 
@@ -25,32 +38,40 @@
     <header>
       <nav class="navbar navbar-expand-lg navbar-light bg-dark">
         <div class="container-fluid">
-          <a class="navbar-brand" href="index.html"><img src="./source/files/tgc.gif" alt="..." style="height: 40px;"></a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <a class="navbar-brand" href="index.html"><img
+              src="./source/files/tgc.gif" alt="..." style="height: 40px;"></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarNav" aria-controls="navbarNav"
+            aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
-               <li id="about" onclick="navclick(this)" class="nav-item"><a class="nav-link" href="#" style="line-height: 120%;">Молитва</a></li>
-                <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Тегилим</a>
+              <li id="about" onclick="navclick(this)" class="nav-item"><a
+                  class="nav-link" href="#"
+                  style="line-height: 120%;">Молитва</a></li>
+              <li id="tegilim" onclick="navclick(this)" class="nav-item"><a
+                  class="nav-link" href="#"
+                  style="line-height: 120%;">Тегилим</a></li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button"
+                  data-bs-toggle="dropdown">Вся Тора</a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li id="tegilimua" onclick="navclick(this)"><a class="dropdown-item" href="#" style="line-height: 160%;">Тегілім укр.</a></li>
-                  <li id="tegilim" onclick="navclick(this)"><a class="dropdown-item" href="#">Тегилим</a></li>
+                  <li id="tora" onclick="navclick(this)"><a
+                      class="dropdown-item" href="#"
+                      style="line-height: 160%;">Тора</a></li>
+                  <li id="ptiha" onclick="navclick(this)"><a
+                      class="dropdown-item" href="#">Птиха</a></li>
+                  <li id="tegilimua" onclick="navclick(this)"><a
+                      class="dropdown-item" href="#"
+                      style="line-height: 160%;">Тегілім укр.</a></li>
                 </ul>
-              </li>
-  <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Вся Тора</a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li id="tora" onclick="navclick(this)"><a class="dropdown-item" href="#" style="line-height: 160%;">Тора</a></li>
-                  <li id="ptiha" onclick="navclick(this)"><a class="dropdown-item" href="#">Птиха</a></li>
-                </ul>
+                <li id="aboutua" onclick="navclick(this)" class="nav-item"><a
+                    class="nav-link" href="#"
+                    style="line-height: 120%;">О проекте</a></li>
               </li>
 
-
-
-
-        <!--       <li id="tora" onclick="navclick(this)" class="nav-item"><a class="nav-link" href="#" style="line-height: 120%;">Вся Тора</a></li>*/-->
+              <!--       <li id="tora" onclick="navclick(this)" class="nav-item"><a class="nav-link" href="#" style="line-height: 120%;">Вся Тора</a></li>*/-->
             </ul>
           </div>
         </div>
@@ -92,8 +113,8 @@
     </div>
 
     <!-- Script -->
-    <script src="./source/js/main.js?v=1.21"></script>
-    <script src="./source/js/click-to-explain.js?v=1.21"></script>
+    <script src="./source/js/main.js?v=1.31"></script>
+    <script src="./source/js/click-to-explain.js?v=1.31"></script>
   </body>
 
 </html>
