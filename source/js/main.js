@@ -231,6 +231,9 @@ function navclick(elementObject) {
         case "ptiha":
       contentPaneId = "inptiha";
       break;
+         case "modcon":
+      contentPaneId = "inmodicon";
+      break;
   }
 
   var contentFileToLoad = "source/fdays/" + contentPaneId + ".html";
